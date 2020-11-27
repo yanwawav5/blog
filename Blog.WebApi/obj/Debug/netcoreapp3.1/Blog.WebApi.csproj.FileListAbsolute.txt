@@ -30,9 +30,6 @@ E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Pomelo.JsonOb
 E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Blog.Model.dll
 E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cs
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.csprojAssemblyReference.cache
-E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.csproj.CoreCompileInputs.cache
-E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cs
-E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cache
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.AssemblyInfoInputs.cache
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.AssemblyInfo.cs
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.dll
@@ -73,3 +70,7 @@ E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.csproj.CopyComplete
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\Blog.WebApi.StaticWebAssets.Manifest.cache
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\staticwebassets\Blog.WebApi.StaticWebAssets.xml
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.genruntimeconfig.cache
+E:\Blog\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.csproj.CoreCompileInputs.cache
+E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cs
+E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cache

@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "rUo+5BYkgOqFuCgSpuPh0rMPJgnbepKhSAVJx/otFWuCTxTz8x9XH8+hWNj78yqVdb+HP+heJDq0Rb0ILfJClQ==",
+  "dgSpecHash": "v3gPTXiqkImvc6UC0X3W/cZ57IUYAlMTayT99drKpnz0USmu6sSKoa2tGb/BThBE8HY9tGzDwROkpS2Ub0YTGw==",
   "success": true,
   "projectFilePath": "E:\\Blog\\blog\\Blog.WebApi\\Blog.WebApi.csproj",
   "expectedPackageFiles": [
@@ -22,12 +22,14 @@
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.aspnetcore.webutilities\\1.0.3\\microsoft.aspnetcore.webutilities.1.0.3.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
-    "C:\\Users\\dahua\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\dahua\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.dotnet.internalabstractions\\1.0.0\\microsoft.dotnet.internalabstractions.1.0.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.entityframeworkcore\\3.1.0\\microsoft.entityframeworkcore.3.1.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\3.1.0\\microsoft.entityframeworkcore.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.entityframeworkcore.analyzers\\3.1.0\\microsoft.entityframeworkcore.analyzers.3.1.0.nupkg.sha512",
+    "C:\\Users\\dahua\\.nuget\\packages\\microsoft.entityframeworkcore.design\\3.1.0\\microsoft.entityframeworkcore.design.3.1.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\3.1.0\\microsoft.entityframeworkcore.relational.3.1.0.nupkg.sha512",
+    "C:\\Users\\dahua\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\3.1.0\\microsoft.entityframeworkcore.tools.3.1.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\3.1.0\\microsoft.extensions.caching.abstractions.3.1.0.nupkg.sha512",
     "C:\\Users\\dahua\\.nuget\\packages\\microsoft.extensions.caching.memory\\3.1.0\\microsoft.extensions.caching.memory.3.1.0.nupkg.sha512",

@@ -1,0 +1,9 @@
+E:\Blog\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.BLL.deps.json
+E:\Blog\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.BLL.dll
+E:\Blog\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.BLL.pdb
+E:\Blog\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.csprojAssemblyReference.cache
+E:\Blog\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.csproj.CoreCompileInputs.cache
+E:\Blog\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.AssemblyInfoInputs.cache
+E:\Blog\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.AssemblyInfo.cs
+E:\Blog\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.dll
+E:\Blog\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.pdb

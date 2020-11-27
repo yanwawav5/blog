@@ -2197,7 +2197,7 @@
       ]
     },
     "Microsoft.CSharp/4.5.0": {
-      "sha512": "EGoBmf3Na2ppbhPePDE9PlX81r1HuOZH5twBrq7couJZiPTjUnD3648balerQJO6EJ8Sj+43+XuRwQ7r+3tE3w==",
+      "sha512": "kaj6Wb4qoMuH3HySFJhxwQfe8R/sJsNJnANrvv8WdFPMoNbKY5htfNscv+LHCu5ipz+49m2e+WQXpLXr9XYemQ==",
       "type": "package",
       "path": "microsoft.csharp/4.5.0",
       "files": [
@@ -2632,7 +2632,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -2745,7 +2745,7 @@
       ]
     },
     "Newtonsoft.Json/11.0.2": {
-      "sha512": "znZGbws7E4BA9jxNZ7FuiIRI3C9hrgatVQSTKhIYZYNOud4M5VfGlTYi6RdYO5sQrebFuF/g9UEV3hOxDMXF6Q==",
+      "sha512": "IvJe1pj7JHEsP8B8J8DwlMEx8UInrs/x+9oVY+oCD13jpLu4JbJU2WCIsMRn5C4yW9+DgkaO8uiVE5VHKjpmdQ==",
       "type": "package",
       "path": "newtonsoft.json/11.0.2",
       "files": [
@@ -6296,23 +6296,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\nzm\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\dahua\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\FileManager\\github_key\\blog\\Blog.WebApi\\Blog.WebApi.csproj",
+      "projectUniqueName": "E:\\Blog\\blog\\Blog.WebApi\\Blog.WebApi.csproj",
       "projectName": "Blog.WebApi",
-      "projectPath": "E:\\FileManager\\github_key\\blog\\Blog.WebApi\\Blog.WebApi.csproj",
-      "packagesPath": "C:\\Users\\nzm\\.nuget\\packages\\",
-      "outputPath": "E:\\FileManager\\github_key\\blog\\Blog.WebApi\\obj\\",
+      "projectPath": "E:\\Blog\\blog\\Blog.WebApi\\Blog.WebApi.csproj",
+      "packagesPath": "C:\\Users\\dahua\\.nuget\\packages\\",
+      "outputPath": "E:\\Blog\\blog\\Blog.WebApi\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\nzm\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dahua\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -6320,19 +6316,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "http://10.9.53.82:8012/nuget": {},
-        "http://10.9.53.82:8013/nuget": {},
-        "http://localhost:1000/nuget": {},
-        "http://nuget.dahuasurvey.com/v3/index.json": {},
-        "http://repo.dahuasurvey.com/repository/nuget-group": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://nuget.cdn.azure.cn/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "E:\\FileManager\\github_key\\blog\\Blog.Model\\Blog.Model.csproj": {
-              "projectPath": "E:\\FileManager\\github_key\\blog\\Blog.Model\\Blog.Model.csproj"
+            "E:\\Blog\\blog\\Blog.Model\\Blog.Model.csproj": {
+              "projectPath": "E:\\Blog\\blog\\Blog.Model\\Blog.Model.csproj"
             }
           }
         }
@@ -6369,7 +6359,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

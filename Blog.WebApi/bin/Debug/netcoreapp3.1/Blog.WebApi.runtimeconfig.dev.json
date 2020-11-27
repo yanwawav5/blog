@@ -1,9 +1,8 @@
 {
   "runtimeOptions": {
     "additionalProbingPaths": [
-      "C:\\Users\\nzm\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\nzm\\.nuget\\packages",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Users\\dahua\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\dahua\\.nuget\\packages"
     ]
   }
 }

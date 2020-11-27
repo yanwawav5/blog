@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,6 +26,23 @@ namespace Blog.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            // swagger
+            services.AddSwaggerDocument(config =>
+            {
+                config.DocumentName = "v1";
+                config.ApiGroupNames = new[] { "v1" };
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "Blog";
+                    document.Info.Description = "Blog.WebApi";
+                };
+            });
+
+            // connections
+            services.AddDbContextPool<BlogContext>(options => options.UseMySql(Configuration["ConnectionString"]));
+
             services.AddControllers();
         }
 
@@ -34,6 +53,11 @@ namespace Blog.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            #region  π”√swagger
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+            #endregion
 
             app.UseRouting();
 

@@ -18,3 +18,14 @@ E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\staticwebasse
 E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.dll
 E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.pdb
 E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.genruntimeconfig.cache
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\MySqlConnector.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Blog.Model.dll
+E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cs

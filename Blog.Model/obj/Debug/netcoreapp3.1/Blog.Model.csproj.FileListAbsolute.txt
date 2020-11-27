@@ -1,0 +1,12 @@
+E:\FileManager\github_key\blog\Blog.Model\bin\Debug\netcoreapp3.1\Blog.Model.deps.json
+E:\FileManager\github_key\blog\Blog.Model\bin\Debug\netcoreapp3.1\Blog.Model.dll
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.csprojAssemblyReference.cache
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.AssemblyInfoInputs.cache
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.AssemblyInfo.cs
+E:\FileManager\github_key\blog\Blog.Model\bin\Debug\netcoreapp3.1\Blog.Model.runtimeconfig.json
+E:\FileManager\github_key\blog\Blog.Model\bin\Debug\netcoreapp3.1\Blog.Model.runtimeconfig.dev.json
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.genruntimeconfig.cache
+E:\FileManager\github_key\blog\Blog.Model\bin\Debug\netcoreapp3.1\Blog.Model.pdb
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.csproj.CoreCompileInputs.cache
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.dll
+E:\FileManager\github_key\blog\Blog.Model\obj\Debug\netcoreapp3.1\Blog.Model.pdb

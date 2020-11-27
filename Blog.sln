@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30104.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F9E816FC-5AFC-4ED6-B5B0-0EC71E474B20}"
+	ProjectSection(SolutionItems) = preProject
+		..\..\..\Git\PM.qualityinspection\PM.qualityinspection\README.md = ..\..\..\Git\PM.qualityinspection\PM.qualityinspection\README.md
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E0C4168B-FF27-4C86-93AF-CEA6E92E1D55}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1.Application", "1.Application", "{98EE63F5-1F09-4087-9182-B305ED75FE7F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2.Service", "2.Service", "{C542E2CC-EC0E-4B1B-B344-DCD8E21BEBE1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3.Entity", "3.Entity", "{D5ACEF97-9B56-44B7-A656-764DB08484FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.WebApi", "Blog.WebApi\Blog.WebApi.csproj", "{C5C36AC7-2705-4723-BD57-F31F9ED39A3F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.BLL", "Blog.BLL\Blog.BLL.csproj", "{33FD36E6-A2EE-4F94-8D7D-72CC5978E126}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Dto", "Blog.Dto\Blog.Dto.csproj", "{D8789158-522B-4BD0-9E29-10E146457F14}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blog.Model", "Blog.Model\Blog.Model.csproj", "{273D7A3B-6CB8-4927-A851-B198B04AF825}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C5C36AC7-2705-4723-BD57-F31F9ED39A3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C5C36AC7-2705-4723-BD57-F31F9ED39A3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C5C36AC7-2705-4723-BD57-F31F9ED39A3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C5C36AC7-2705-4723-BD57-F31F9ED39A3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33FD36E6-A2EE-4F94-8D7D-72CC5978E126}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FD36E6-A2EE-4F94-8D7D-72CC5978E126}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FD36E6-A2EE-4F94-8D7D-72CC5978E126}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FD36E6-A2EE-4F94-8D7D-72CC5978E126}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8789158-522B-4BD0-9E29-10E146457F14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8789158-522B-4BD0-9E29-10E146457F14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8789158-522B-4BD0-9E29-10E146457F14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8789158-522B-4BD0-9E29-10E146457F14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{273D7A3B-6CB8-4927-A851-B198B04AF825}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{273D7A3B-6CB8-4927-A851-B198B04AF825}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{273D7A3B-6CB8-4927-A851-B198B04AF825}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{273D7A3B-6CB8-4927-A851-B198B04AF825}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{98EE63F5-1F09-4087-9182-B305ED75FE7F} = {E0C4168B-FF27-4C86-93AF-CEA6E92E1D55}
+		{C542E2CC-EC0E-4B1B-B344-DCD8E21BEBE1} = {E0C4168B-FF27-4C86-93AF-CEA6E92E1D55}
+		{D5ACEF97-9B56-44B7-A656-764DB08484FD} = {E0C4168B-FF27-4C86-93AF-CEA6E92E1D55}
+		{C5C36AC7-2705-4723-BD57-F31F9ED39A3F} = {98EE63F5-1F09-4087-9182-B305ED75FE7F}
+		{33FD36E6-A2EE-4F94-8D7D-72CC5978E126} = {C542E2CC-EC0E-4B1B-B344-DCD8E21BEBE1}
+		{D8789158-522B-4BD0-9E29-10E146457F14} = {D5ACEF97-9B56-44B7-A656-764DB08484FD}
+		{273D7A3B-6CB8-4927-A851-B198B04AF825} = {D5ACEF97-9B56-44B7-A656-764DB08484FD}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7C501785-2B83-4491-8081-B9C6D8ADFB97}
+	EndGlobalSection
+EndGlobal

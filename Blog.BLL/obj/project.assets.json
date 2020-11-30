@@ -1,26 +1,49 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "Blog.Dto/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Blog.Dto.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Blog.Dto.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "Blog.Dto/1.0.0": {
+      "type": "project",
+      "path": "../Blog.Dto/Blog.Dto.csproj",
+      "msbuildProject": "../Blog.Dto/Blog.Dto.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "Blog.Dto >= 1.0.0"
+    ]
   },
   "packageFolders": {
-    "C:\\Users\\dahua\\.nuget\\packages\\": {}
+    "C:\\Users\\nzm\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Blog\\blog\\Blog.BLL\\Blog.BLL.csproj",
+      "projectUniqueName": "E:\\FileManager\\github_key\\blog\\Blog.BLL\\Blog.BLL.csproj",
       "projectName": "Blog.BLL",
-      "projectPath": "E:\\Blog\\blog\\Blog.BLL\\Blog.BLL.csproj",
-      "packagesPath": "C:\\Users\\dahua\\.nuget\\packages\\",
-      "outputPath": "E:\\Blog\\blog\\Blog.BLL\\obj\\",
+      "projectPath": "E:\\FileManager\\github_key\\blog\\Blog.BLL\\Blog.BLL.csproj",
+      "packagesPath": "C:\\Users\\nzm\\.nuget\\packages\\",
+      "outputPath": "E:\\FileManager\\github_key\\blog\\Blog.BLL\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      ],
       "configFilePaths": [
-        "C:\\Users\\dahua\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\nzm\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -28,11 +51,21 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "http://10.9.53.82:8012/nuget": {},
+        "http://10.9.53.82:8013/nuget": {},
+        "http://localhost:1000/nuget": {},
+        "http://nuget.dahuasurvey.com/v3/index.json": {},
+        "http://repo.dahuasurvey.com/repository/nuget-group": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.cdn.azure.cn/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "projectReferences": {}
+          "projectReferences": {
+            "E:\\FileManager\\github_key\\blog\\Blog.Dto\\Blog.Dto.csproj": {
+              "projectPath": "E:\\FileManager\\github_key\\blog\\Blog.Dto\\Blog.Dto.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -58,7 +91,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   }

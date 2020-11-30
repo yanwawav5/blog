@@ -7,3 +7,12 @@ E:\Blog\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.AssemblyInfoInputs.cache
 E:\Blog\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.AssemblyInfo.cs
 E:\Blog\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.dll
 E:\Blog\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.pdb
+E:\FileManager\github_key\blog\Blog.Dto\bin\Debug\netcoreapp3.1\Blog.Dto.deps.json
+E:\FileManager\github_key\blog\Blog.Dto\bin\Debug\netcoreapp3.1\Blog.Dto.dll
+E:\FileManager\github_key\blog\Blog.Dto\bin\Debug\netcoreapp3.1\Blog.Dto.pdb
+E:\FileManager\github_key\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.csprojAssemblyReference.cache
+E:\FileManager\github_key\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.csproj.CoreCompileInputs.cache
+E:\FileManager\github_key\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.AssemblyInfoInputs.cache
+E:\FileManager\github_key\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.AssemblyInfo.cs
+E:\FileManager\github_key\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.dll
+E:\FileManager\github_key\blog\Blog.Dto\obj\Debug\netcoreapp3.1\Blog.Dto.pdb

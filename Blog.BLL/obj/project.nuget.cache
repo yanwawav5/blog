@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "/UdqAd5jL6SrE1rp8bj6pn0qkWJghENv/70Ex6ho+tLh7eFO96pak/NAjhQu1DOUPJhkKFZpJfv2IbtBW1iVNA==",
+  "dgSpecHash": "OnWpec3u01ejzlG8OT2u3rwgNyLnbKVWYnH4YeYvyXQMZU9dHY4pdkWT8emaZ+NESMjSTHvZMMoZ5x8SZmCoSw==",
   "success": true,
-  "projectFilePath": "E:\\Blog\\blog\\Blog.BLL\\Blog.BLL.csproj",
+  "projectFilePath": "E:\\FileManager\\github_key\\blog\\Blog.BLL\\Blog.BLL.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -21,6 +21,10 @@ namespace Blog.Model
         [DisplayName("内容ID")]
         public string ContentId { get; set; }
 
+        [MaxLength(500)]
+        [DisplayName("备注")]
+        public string Remark { get; set; }
+
         [Required, MaxLength(36)]
         [DisplayName("类别ID")]
         public string CategoryId { get; set; }

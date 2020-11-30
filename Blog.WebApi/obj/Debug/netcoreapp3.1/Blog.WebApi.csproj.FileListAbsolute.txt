@@ -74,3 +74,17 @@ E:\Blog\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.D
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.csproj.CoreCompileInputs.cache
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cs
 E:\Blog\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.MvcApplicationPartsAssemblyInfo.cache
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.DotNet.InternalAbstractions.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Namotion.Reflection.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\NJsonSchema.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\NSwag.Annotations.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\NSwag.AspNetCore.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\NSwag.Core.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\NSwag.Generation.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\NSwag.Generation.AspNetCore.dll
+E:\FileManager\github_key\blog\Blog.WebApi\bin\Debug\netcoreapp3.1\Blog.Model.pdb
+E:\FileManager\github_key\blog\Blog.WebApi\obj\Debug\netcoreapp3.1\Blog.WebApi.csproj.CopyComplete

@@ -38,7 +38,11 @@ namespace Blog.Model
         public int LikeTimes { get; set; }
 
         [Required, MaxLength(11)]
-        [DisplayName("评论楼层数")]
-        public int FloorNum { get; set; }
+        [DisplayName("当前评论楼层数")]
+        public int CurrentFloorNum { get; set; }
+
+        [MaxLength(11)]
+        [DisplayName("被评论人所处评论楼层数")]
+        public int? ToFloorNum { get; set; }
     }
 }

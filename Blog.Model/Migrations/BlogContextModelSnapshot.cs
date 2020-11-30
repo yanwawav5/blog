@@ -51,6 +51,10 @@ namespace Blog.Model.Migrations
                     b.Property<DateTime?>("PublishAt")
                         .HasColumnType("datetime(6)");
 
+                    b.Property<string>("Remark")
+                        .HasColumnType("varchar(500) CHARACTER SET utf8mb4")
+                        .HasMaxLength(500);
+
                     b.Property<string>("State")
                         .IsRequired()
                         .HasColumnType("varchar(1) CHARACTER SET utf8mb4")
@@ -151,7 +155,7 @@ namespace Blog.Model.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<int>("FloorNum")
+                    b.Property<int>("CurrentFloorNum")
                         .HasColumnType("int")
                         .HasMaxLength(11);
 
@@ -167,6 +171,10 @@ namespace Blog.Model.Migrations
                     b.Property<string>("To")
                         .HasColumnType("varchar(36) CHARACTER SET utf8mb4")
                         .HasMaxLength(36);
+
+                    b.Property<int?>("ToFloorNum")
+                        .HasColumnType("int")
+                        .HasMaxLength(11);
 
                     b.HasKey("Id");
 

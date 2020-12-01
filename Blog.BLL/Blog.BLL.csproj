@@ -5,12 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Service\" />
     <Folder Include="Mappers\" />
+    <Folder Include="Service\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Blog.Dto\Blog.Dto.csproj" />
+    <ProjectReference Include="..\Blog.Model\Blog.Model.csproj" />
   </ItemGroup>
 
 </Project>

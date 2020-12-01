@@ -5,12 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Mappers\" />
-    <Folder Include="Service\" />
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Blog.BLL\Blog.BLL.csproj" />
     <ProjectReference Include="..\Blog.Dto\Blog.Dto.csproj" />
+    <ProjectReference Include="..\Blog.Model\Blog.Model.csproj" />
   </ItemGroup>
 
 </Project>

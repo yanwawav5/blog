@@ -5,6 +5,6 @@ namespace Blog.Admin.BLL.Interface
 {
     public interface IUserService
     {
-        CommonResultDto<UserViewDto> UserList(string keyword, int pageIndex, int pageSize);
+        CommonPageResultDto<UserViewDto> UserList(string keyword, int pageIndex, int pageSize);
     }
 }

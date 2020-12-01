@@ -1,14 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using AutoMapper;
+using Blog.Admin.BLL.Interface;
+using Blog.Admin.BLL.Service;
+using Blog.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
+using System.Linq;
+using System.Reflection;
 
 namespace Blog.Admin.WebApi
 {
@@ -24,6 +25,36 @@ namespace Blog.Admin.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            // swagger
+            services.AddSwaggerDocument(config =>
+            {
+                config.DocumentName = "v1";
+                config.ApiGroupNames = new[] { "v1" };
+                config.PostProcess = document =>
+                {
+                    document.Info.Version = "v1";
+                    document.Info.Title = "BlogAdmin";
+                    document.Info.Description = "Blog.Admin.WebApi";
+                };
+            });
+
+            // connections
+            services.AddDbContextPool<BlogContext>(options => options.UseMySql(Configuration["ConnectionString"]));
+
+            services.AddScoped<IBlogManageService, BlogManageService>();
+            services.AddScoped<ICategoryManageService, CategoryManageService>();
+
+            //AutoMapper
+            var allType =
+                Assembly
+                    .GetEntryAssembly()//获取默认程序集
+                    .GetReferencedAssemblies()//获取所有引用程序集
+                    .Select(Assembly.Load)
+                    .SelectMany(y => y.DefinedTypes)
+                    .Where(type => typeof(BLL.Mappers.MapperConfig).GetTypeInfo().IsAssignableFrom(type.AsType()));
+
+            services.AddAutoMapper(allType.ToArray());
+
             services.AddControllers();
         }
 
@@ -34,6 +65,11 @@ namespace Blog.Admin.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            #region 使用swagger
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
+            #endregion
 
             app.UseRouting();
 

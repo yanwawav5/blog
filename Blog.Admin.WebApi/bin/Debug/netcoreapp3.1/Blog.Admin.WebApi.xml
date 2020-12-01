@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Blog.Admin.WebApi</name>
+    </assembly>
+    <members>
+        <member name="T:Blog.Admin.WebApi.Controllers.BlogController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.BlogController.#ctor(Microsoft.Extensions.Logging.ILogger{Blog.Admin.WebApi.Controllers.BlogController},Blog.Admin.BLL.Interface.IBlogManageService)">
+            <summary>
+            
+            </summary>
+            <param name="logger"></param>
+            <param name="blogManageService"></param>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.BlogController.Get(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取博客列表
+            </summary>
+            <param name="keyword">关键字</param>
+            <param name="pageIndex">页码</param>
+            <param name="pageSize">页数</param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.BlogController.Delete(System.String)">
+            <summary>
+            删除博客
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.BlogController.Post(Blog.Dto.BlogAdmin.BlogAddDto)">
+            <summary>
+            新增博客
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.BlogController.Update(Blog.Dto.BlogAdmin.BlogUpdateDto)">
+            <summary>
+            更新博客
+            </summary>
+            <param name="dto"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Admin.WebApi.Controllers.CategoryController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.CategoryController.#ctor(Blog.Admin.BLL.Interface.ICategoryManageService)">
+            <summary>
+            
+            </summary>
+            <param name="categoryManageService"></param>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.CategoryController.CategoryList">
+            <summary>
+            博客类别列表
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

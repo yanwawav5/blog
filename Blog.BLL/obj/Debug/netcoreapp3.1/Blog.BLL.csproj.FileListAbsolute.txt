@@ -13,9 +13,11 @@ E:\FileManager\github_key\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.BLL.pdb
 E:\FileManager\github_key\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.Dto.dll
 E:\FileManager\github_key\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.Dto.pdb
 E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.csprojAssemblyReference.cache
-E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.csproj.CoreCompileInputs.cache
 E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.AssemblyInfoInputs.cache
 E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.AssemblyInfo.cs
 E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.csproj.CopyComplete
 E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.dll
 E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.pdb
+E:\FileManager\github_key\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.Model.dll
+E:\FileManager\github_key\blog\Blog.BLL\bin\Debug\netcoreapp3.1\Blog.Model.pdb
+E:\FileManager\github_key\blog\Blog.BLL\obj\Debug\netcoreapp3.1\Blog.BLL.csproj.CoreCompileInputs.cache

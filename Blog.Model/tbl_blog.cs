@@ -52,6 +52,9 @@ namespace Blog.Model
         [DisplayName("发布时间")]
         public DateTime? PublishAt { get; set; }
 
+        [DisplayName("修改时间")]
+        public DateTime? UpdateAt { get; set; }
+
         [DisplayName("datetime")]
         public DateTime? DeleteAt { get; set; }
     }

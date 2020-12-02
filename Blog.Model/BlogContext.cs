@@ -12,7 +12,7 @@ namespace Blog.Model
 
         public DbSet<tbl_blog> tbl_blog { get; set; }
         public DbSet<tbl_blog_content> tbl_blog_content { get; set; }
-        public DbSet<tbl_blog_tag_relationship> tbl_blog_tag_relationship { get; set; }
+        public DbSet<tbl_blog_tag_relation> tbl_blog_tag_relation { get; set; }
         public DbSet<tbl_category> tbl_category { get; set; }
         public DbSet<tbl_comment> tbl_comment { get; set; }
         public DbSet<tbl_file> tbl_file { get; set; }

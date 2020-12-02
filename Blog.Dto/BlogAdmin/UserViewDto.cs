@@ -9,6 +9,6 @@ namespace Blog.Dto.BlogAdmin
         public string Email { get; set; }
         public DateTime RegisterAt { get; set; }
         public DateTime LastLoginAt { get; set; }
-        public string LastLoginAddress { get; set; }
+        public string LastLoginAddr { get; set; }
     }
 }

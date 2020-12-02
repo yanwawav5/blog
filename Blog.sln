@@ -5,6 +5,7 @@ VisualStudioVersion = 16.0.30104.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F9E816FC-5AFC-4ED6-B5B0-0EC71E474B20}"
 	ProjectSection(SolutionItems) = preProject
+		..\..\..\Git\PM.qualityinspection\PM.qualityinspection\.gitignore = ..\..\..\Git\PM.qualityinspection\PM.qualityinspection\.gitignore
 		..\..\..\Git\PM.qualityinspection\PM.qualityinspection\README.md = ..\..\..\Git\PM.qualityinspection\PM.qualityinspection\README.md
 	EndProjectSection
 EndProject

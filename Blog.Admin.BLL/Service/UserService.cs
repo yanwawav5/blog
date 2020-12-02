@@ -19,6 +19,13 @@ namespace Blog.Admin.BLL.Service
             _mapper = mapper;
         }
 
+        /// <summary>
+        /// 用户列表
+        /// </summary>
+        /// <param name="keyword"></param>
+        /// <param name="pageIndex"></param>
+        /// <param name="pageSize"></param>
+        /// <returns></returns>
         public async Task<CommonPageResultDto<UserViewDto>> UserList(string keyword, int pageIndex, int pageSize)
         {
             CommonPageResultDto<UserViewDto> rlt = new CommonPageResultDto<UserViewDto>();

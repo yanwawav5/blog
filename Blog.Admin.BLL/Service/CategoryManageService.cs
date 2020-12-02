@@ -19,6 +19,11 @@ namespace Blog.Admin.BLL.Service
             _context = context;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// 博客类别列表
+        /// </summary>
+        /// <returns></returns>
         public async Task<CommonResultDto<List<CategoryViewDto>>> CategoryList()
         {
             var data = await _context.tbl_category.OrderBy(s => s.Sequence).Select(i => _mapper.Map<CategoryViewDto>(i)).ToListAsync();

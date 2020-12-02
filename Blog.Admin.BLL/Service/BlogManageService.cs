@@ -1,13 +1,12 @@
-﻿using Blog.Dto;
+﻿using Blog.Admin.BLL.Interface;
+using Blog.Dto;
 using Blog.Dto.BlogAdmin;
-using Blog.Admin.BLL.Interface;
+using Blog.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
-using Blog.Model;
 using System.Linq;
-using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Blog.Admin.BLL.Service
 {
@@ -47,8 +46,8 @@ namespace Blog.Admin.BLL.Service
                                              LikeTimes = a.LikeTimes
                                          }).ToListAsync();
 
-            IQueryable<BlogTagQryDto> tagRlt = (from a in _context.tbl_blog_tag_relationship
-                         join b in _context.tbl_tag
+            IQueryable<BlogTagQryDto> tagRlt = (from a in _context.tbl_blog_tag_relation
+                                                join b in _context.tbl_tag
                          on a.TagId equals b.Id
                          select new BlogTagQryDto { BlogId = a.BlogId, TagName = b.Name });
             foreach (var item in qry)
@@ -113,10 +112,10 @@ namespace Blog.Admin.BLL.Service
                     DeleteAt = null
                 };
 
-                List<tbl_blog_tag_relationship> relationList = new List<tbl_blog_tag_relationship>();
+                List<tbl_blog_tag_relation> relationList = new List<tbl_blog_tag_relation>();
                 foreach (var item in dto.TagIdList)
                 {
-                    relationList.Add(new tbl_blog_tag_relationship
+                    relationList.Add(new tbl_blog_tag_relation
                     {
                         Id = Guid.NewGuid().ToString(),
                         BlogId = blogId,
@@ -126,7 +125,7 @@ namespace Blog.Admin.BLL.Service
 
                 await _context.tbl_blog.AddAsync(tbl_blog);
                 await _context.tbl_blog_content.AddAsync(tbl_content);
-                await _context.tbl_blog_tag_relationship.AddRangeAsync(relationList);
+                await _context.tbl_blog_tag_relation.AddRangeAsync(relationList);
                 await _context.SaveChangesAsync();
                 _context.Database.CommitTransaction();
 
@@ -143,9 +142,37 @@ namespace Blog.Admin.BLL.Service
         {
             using(await _context.Database.BeginTransactionAsync())
             {
+                tbl_blog blog = await _context.tbl_blog.FirstOrDefaultAsync(i => i.Id == dto.Id);
+                tbl_blog_content content = await _context.tbl_blog_content.FirstOrDefaultAsync(i => i.Id == blog.ContentId);
+                List<tbl_blog_tag_relation> tagRelations = await _context.tbl_blog_tag_relation.Where(i => i.BlogId == dto.Id).ToListAsync();
+                List<tbl_blog_tag_relation> insertTags = new List<tbl_blog_tag_relation>();
+                foreach (var tagId in dto.TagIdList)
+                {
+                    insertTags.Add(new tbl_blog_tag_relation
+                    {
+                        Id = Guid.NewGuid().ToString(),
+                        BlogId = dto.Id,
+                        TagId = tagId
+                    });
+                }
 
+                blog.Title = dto.Title;
+                blog.PicUrl = dto.PicUrl;
+                blog.CategoryId = dto.CategoryId;
+                blog.UpdateAt = DateTime.Now;
+                _context.tbl_blog.Update(blog);
+
+                content.Content = dto.Content;
+                _context.tbl_blog_content.Update(content);
+
+                _context.tbl_blog_tag_relation.RemoveRange(tagRelations);
+                await _context.tbl_blog_tag_relation.AddRangeAsync(insertTags);
+
+                await _context.SaveChangesAsync();
+                _context.Database.CommitTransaction();
+
+                return new CommonResultDto<string> { Msg = "更新成功", Success = true };
             }
-            throw new NotImplementedException();
         }
     }
 }

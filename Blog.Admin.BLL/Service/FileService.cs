@@ -20,6 +20,11 @@ namespace Blog.Admin.BLL.Service
             _context = context;
         }
 
+        /// <summary>
+        /// 上传文件
+        /// </summary>
+        /// <param name="file"></param>
+        /// <returns></returns>
         public async Task<CommonResultDto<string>> Upload(IFormFile file)
         {
             var path = Directory.GetCurrentDirectory() + _configuration["FilePath"];
@@ -54,6 +59,11 @@ namespace Blog.Admin.BLL.Service
             };
         }
 
+        /// <summary>
+        /// 删除文件
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<CommonResultDto<string>> Delete(string id)
         {
             tbl_file file = await _context.tbl_file.FirstOrDefaultAsync(i => i.Id == id);

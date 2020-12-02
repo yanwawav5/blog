@@ -6,7 +6,7 @@ namespace Blog.Model
     /// <summary>
     /// 博客标签关联表
     /// </summary>
-    public class tbl_blog_tag_relationship
+    public class tbl_blog_tag_relation
     {
         [Required, MaxLength(36)]
         [DisplayName("主键ID")]

@@ -19,6 +19,11 @@ namespace Blog.Admin.BLL.Service
             _context = context;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// 博客标签列表
+        /// </summary>
+        /// <returns></returns>
         public async Task<CommonResultDto<List<TagViewDto>>> TagList()
         {
             var data = await _context.tbl_tag.OrderBy(i => i.Sequence).Select(i => _mapper.Map<TagViewDto>(i)).ToListAsync();

@@ -1,10 +1,12 @@
 ﻿using Blog.Dto;
-using System.IO;
+using Microsoft.AspNetCore.Http;
+using System.Threading.Tasks;
 
 namespace Blog.Admin.BLL.Interface
 {
     public interface IFileService
     {
-        CommonResultDto<string> Upload(File file);
+        Task<CommonResultDto<string>> Upload(IFormFile file);
+        Task<CommonResultDto<string>> Delete(string id);
     }
 }

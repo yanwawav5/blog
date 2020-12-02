@@ -43,6 +43,9 @@ namespace Blog.Admin.WebApi
 
             services.AddScoped<IBlogManageService, BlogManageService>();
             services.AddScoped<ICategoryManageService, CategoryManageService>();
+            services.AddScoped<ITagManageService, TagManageService>();
+            services.AddScoped<IFileService, FileService>();
+            services.AddScoped<IUserService, UserService>();
 
             //AutoMapper
             var allType =

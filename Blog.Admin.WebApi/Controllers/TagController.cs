@@ -13,26 +13,26 @@ namespace Blog.Admin.WebApi.Controllers
     [Route("api/[controller]")]
     [ApiExplorerSettings(GroupName = "v1")]
     [ApiController]
-    public class CategoryController : ControllerBase
+    public class TagController : ControllerBase
     {
-        private readonly ICategoryManageService _categoryManageService;
+        private readonly ITagManageService _tagManageService;
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="categoryManageService"></param>
-        public CategoryController(ICategoryManageService categoryManageService)
+        /// <param name="tagManageService"></param>
+        public TagController(ITagManageService tagManageService)
         {
-            _categoryManageService = categoryManageService;
+            _tagManageService = tagManageService;
         }
 
         /// <summary>
-        /// 博客类别列表
+        /// 博客标签列表
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public async Task<CommonResultDto<List<CategoryViewDto>>> Get()
+        public async Task<CommonResultDto<List<TagViewDto>>> Get()
         {
-            return await _categoryManageService.CategoryList();
+            return await _tagManageService.TagList();
         }
     }
 }

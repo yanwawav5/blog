@@ -13,4 +13,8 @@ E:\FileManager\github_key\blog\Blog.Admin.BLL\bin\Debug\netcoreapp3.1\Blog.BLL.d
 E:\FileManager\github_key\blog\Blog.Admin.BLL\bin\Debug\netcoreapp3.1\Blog.BLL.pdb
 E:\FileManager\github_key\blog\Blog.Admin.BLL\bin\Debug\netcoreapp3.1\Blog.Model.dll
 E:\FileManager\github_key\blog\Blog.Admin.BLL\bin\Debug\netcoreapp3.1\Blog.Model.pdb
+E:\FileManager\github_key\blog\Blog.Admin.BLL\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 E:\FileManager\github_key\blog\Blog.Admin.BLL\obj\Debug\netcoreapp3.1\Blog.Admin.BLL.csproj.CoreCompileInputs.cache
+E:\FileManager\github_key\blog\Blog.Admin.BLL\obj\Debug\netcoreapp3.1\Blog.Admin.BLL.RazorTargetAssemblyInfo.cache
+E:\FileManager\github_key\blog\Blog.Admin.BLL\obj\Debug\netcoreapp3.1\staticwebassets\Blog.Admin.BLL.StaticWebAssets.Manifest.cache
+E:\FileManager\github_key\blog\Blog.Admin.BLL\obj\Debug\netcoreapp3.1\staticwebassets\Blog.Admin.BLL.StaticWebAssets.xml

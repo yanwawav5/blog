@@ -7,6 +7,7 @@ using Blog.Model;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Blog.Admin.BLL.Service
 {
@@ -28,8 +29,8 @@ namespace Blog.Admin.BLL.Service
         public async Task<CommonPageResultDto<BlogListViewDto>> BlogList(string keyword, int pageIndex, int pageSize)
         {
             CommonPageResultDto<BlogListViewDto> rlt = new CommonPageResultDto<BlogListViewDto>();
-            List<BlogListViewDto> qry = await (from a in _context.tbl_blog 
-                                         join b in _context.tbl_blog_content 
+            List<BlogListViewDto> qry = await (from a in _context.tbl_blog.Where(i=>i.Title.Contains(keyword)) 
+                                         join b in _context.tbl_blog_content.Where(i=>i.Content.Contains(keyword)) 
                                          on a.ContentId equals b.Id
                                          join c in _context.tbl_category 
                                          on a.CategoryId equals c.Id
@@ -73,6 +74,7 @@ namespace Blog.Admin.BLL.Service
             tbl_blog tbl = await _context.tbl_blog.FirstOrDefaultAsync(i=>i.Id == id);
             tbl.DeleteAt = DateTime.Now;
             _context.tbl_blog.Update(tbl);
+            await _context.SaveChangesAsync();
 
             return new CommonResultDto<string> { Msg = "更新成功", Success = true };
         }

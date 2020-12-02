@@ -57,10 +57,71 @@
             </summary>
             <param name="categoryManageService"></param>
         </member>
-        <member name="M:Blog.Admin.WebApi.Controllers.CategoryController.CategoryList">
+        <member name="M:Blog.Admin.WebApi.Controllers.CategoryController.Get">
             <summary>
             博客类别列表
             </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Admin.WebApi.Controllers.FileController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.FileController.#ctor(Blog.Admin.BLL.Interface.IFileService)">
+            <summary>
+            
+            </summary>
+            <param name="fileService"></param>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.FileController.Upload(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            上传文件
+            </summary>
+            <param name="file"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.FileController.Delete(System.String)">
+            <summary>
+            文件删除
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Admin.WebApi.Controllers.TagController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.TagController.#ctor(Blog.Admin.BLL.Interface.ITagManageService)">
+            <summary>
+            
+            </summary>
+            <param name="tagManageService"></param>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.TagController.Get">
+            <summary>
+            博客标签列表
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Blog.Admin.WebApi.Controllers.UserController">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.UserController.#ctor(Blog.Admin.BLL.Interface.IUserService)">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="M:Blog.Admin.WebApi.Controllers.UserController.Get(System.String,System.Int32,System.Int32)">
+            <summary>
+            获取用户列表
+            </summary>
+            <param name="keyword"></param>
+            <param name="pageIndex"></param>
+            <param name="pageSize"></param>
             <returns></returns>
         </member>
     </members>

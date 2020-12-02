@@ -40,9 +40,7 @@ namespace Blog.Admin.WebApi.Controllers
         [HttpGet]
         public async Task<CommonPageResultDto<BlogListViewDto>> Get(string keyword, int pageIndex, int pageSize)
         {
-            var rlt = await _blogManageService.BlogList(keyword, pageIndex, pageSize);
-
-            return rlt;
+            return await _blogManageService.BlogList(keyword, pageIndex, pageSize);
         }
 
         /// <summary>
@@ -53,9 +51,7 @@ namespace Blog.Admin.WebApi.Controllers
         [HttpDelete]
         public async Task<CommonResultDto<string>> Delete(string id)
         {
-            var rlt = await _blogManageService.Delete(id);
-
-            return rlt;
+            return await _blogManageService.Delete(id);
         }
 
         /// <summary>
@@ -66,9 +62,7 @@ namespace Blog.Admin.WebApi.Controllers
         [HttpPost]
         public async Task<CommonResultDto<string>> Post(BlogAddDto dto)
         {
-            var rlt = await _blogManageService.Post(dto);
-
-            return rlt;
+            return await _blogManageService.Post(dto);
         }
 
         /// <summary>
@@ -79,9 +73,7 @@ namespace Blog.Admin.WebApi.Controllers
         [HttpPut]
         public async Task<CommonResultDto<string>> Update(BlogUpdateDto dto)
         {
-            var rlt = await _blogManageService.Update(dto);
-
-            return rlt;
+            return await _blogManageService.Update(dto);
         }
     }
 }

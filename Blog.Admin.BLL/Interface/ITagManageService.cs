@@ -1,11 +1,12 @@
 ﻿using Blog.Dto;
 using Blog.Dto.BlogAdmin;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Blog.Admin.BLL.Interface
 {
     public interface ITagManageService
     {
-        CommonResultDto<List<TagViewDto>> TagList();
+        Task<CommonResultDto<List<TagViewDto>>> TagList();
     }
 }

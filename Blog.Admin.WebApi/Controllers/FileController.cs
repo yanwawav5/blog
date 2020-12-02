@@ -9,7 +9,7 @@ namespace Blog.Admin.WebApi.Controllers
     /// <summary>
     /// 
     /// </summary>
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiExplorerSettings(GroupName = "v1")]
     [ApiController]
     public class FileController : ControllerBase

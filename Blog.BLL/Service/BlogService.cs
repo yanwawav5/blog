@@ -52,14 +52,22 @@ namespace Blog.BLL.Service
                 list = await _context.tbl_blog.Where(i => i.DeleteAt == null).ToListAsync();
             }
 
+            List<BlogListViewDto> commentGroup = await (from a in _context.tbl_comment
+                                               group a by a.BlogId into g
+                                               select new BlogListViewDto
+                                               {
+                                                   Id = g.Key,
+                                                   CommentTimes = g.Count()
+                                               }).ToListAsync();
+
             List<BlogListViewDto> qry = (from a in list
                                         join b in _context.tbl_blog_content
                                         on a.ContentId equals b.Id
                                         join c in _context.tbl_category
                                         on a.CategoryId equals c.Id
-                                        //join d in _context.tbl_comment
-                                        //on a.Id equals d.BlogId
-                                        select new BlogListViewDto
+                                         join d in commentGroup
+                                         on a.Id equals d.Id
+                                         select new BlogListViewDto
                                         {
                                             Id = a.Id,
                                             Title = a.Title,
@@ -68,7 +76,7 @@ namespace Blog.BLL.Service
                                             ViewTimes = a.ViewTimes,
                                             LikeTimes = a.LikeTimes,
                                             PicUrl = a.PicUrl,
-                                            CommentTimes = _context.tbl_comment.Count(i=>i.BlogId == a.Id)
+                                            CommentTimes = d.CommentTimes // _context.tbl_comment.Count(i=>i.BlogId == a.Id)
                                         }).ToList();
 
             IQueryable<TagViewDto> tagRlt = (from a in _context.tbl_blog_tag_relation
@@ -97,24 +105,34 @@ namespace Blog.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<BlogViewDto>> BlogDetail(string id)
         {
-            var qry = await (from a in _context.tbl_blog.Where(i => i.DeleteAt == null)
-                   join b in _context.tbl_blog_content
-                   on a.ContentId equals b.Id
-                   join c in _context.tbl_category
-                   on a.CategoryId equals c.Id
-                   where a.Id == id
-                   select new BlogViewDto
-                   {
-                       Title = a.Title,
-                       PicUrl = a.PicUrl,
-                       Content = b.Content,
-                       Remark = a.Remark,
-                       CategoryName = c.Name,
-                       CreateAt = a.CreateAt,
-                       ViewTimes = a.ViewTimes,
-                       LikeTimes = a.LikeTimes,
-                       CommentTimes = _context.tbl_comment.Count(i => i.BlogId == a.Id)
-                   }).ToListAsync();
+            List<BlogListViewDto> commentGroup = await (from a in _context.tbl_comment
+                                                        group a by a.BlogId into g
+                                                        select new BlogListViewDto
+                                                        {
+                                                            Id = g.Key,
+                                                            CommentTimes = g.Count()
+                                                        }).ToListAsync();
+
+            var qry =  (from g in commentGroup
+                         join a in _context.tbl_blog.Where(i => i.DeleteAt == null)
+                         on g.Id equals a.Id
+                         join b in _context.tbl_blog_content
+                         on a.ContentId equals b.Id
+                         join c in _context.tbl_category
+                         on a.CategoryId equals c.Id
+                         where a.Id == id
+                         select new BlogViewDto
+                        {
+                            Title = a.Title,
+                            PicUrl = a.PicUrl,
+                            Content = b.Content,
+                            Remark = a.Remark,
+                            CategoryName = c.Name,
+                            CreateAt = a.CreateAt,
+                            ViewTimes = a.ViewTimes,
+                            LikeTimes = a.LikeTimes,
+                            CommentTimes = g.CommentTimes//_context.tbl_comment.Count(i => i.BlogId == a.Id)
+                        }).ToList();
 
             BlogViewDto rlt = qry.FirstOrDefault();
             IQueryable<TagViewDto> tagRlt = (from a in _context.tbl_blog_tag_relation

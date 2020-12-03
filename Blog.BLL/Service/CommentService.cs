@@ -84,7 +84,7 @@ namespace Blog.BLL.Service
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public async Task<CommonResultDto<string>> Update(string id)
+        public async Task<CommonResultDto<string>> Like(string id)
         {
             tbl_comment tbl = await _context.tbl_comment.FirstOrDefaultAsync(i => i.Id == id);
             if(tbl != null)

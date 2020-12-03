@@ -55,9 +55,9 @@ namespace Blog.WebApi.Controllers
         /// <param name="id"></param>
         /// <returns></returns>
         [HttpPut]
-        public async Task<CommonResultDto<string>> Update(string id)
+        public async Task<CommonResultDto<string>> Like(string id)
         {
-            return await _commentService.Update(id);
+            return await _commentService.Like(id);
         }
     }
 }

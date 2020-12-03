@@ -12,5 +12,7 @@ namespace Blog.BLL.Interface
         Task<CommonResultDto<List<TopBlogViewDto>>> TopBlogList();
 
         Task<CommonResultDto<BlogViewDto>> BlogDetail(string id);
+
+        Task<CommonResultDto<string>> Like(string id);
     }
 }

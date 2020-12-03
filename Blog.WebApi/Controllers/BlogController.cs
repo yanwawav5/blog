@@ -58,5 +58,16 @@ namespace Blog.WebApi.Controllers
         {
             return await _blogService.TopBlogList();
         }
+
+        /// <summary>
+        /// 点赞
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<CommonResultDto<string>> Like(string id)
+        {
+            return await _blogService.Like(id);
+        }
     }
 }

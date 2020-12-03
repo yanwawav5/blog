@@ -122,7 +122,17 @@ namespace Blog.BLL.Service
                                              on a.TagId equals b.Id
                                              select new TagViewDto { BlogId = a.BlogId, TagName = b.Name, TagId = b.Id, Sequence = b.Sequence });
             rlt.TagNameList = await tagRlt.Where(i => i.BlogId == id).Select(i => i.TagName).ToListAsync();
-            
+
+
+            //查看一次详情，浏览次数累加一次
+            tbl_blog tbl = await _context.tbl_blog.FirstOrDefaultAsync(i => i.Id == id);
+            if(tbl != null)
+            {
+                ++tbl.ViewTimes;
+            }
+            _context.tbl_blog.Update(tbl);
+            await _context.SaveChangesAsync();
+
             return new CommonResultDto<BlogViewDto> { Msg = "查询成功", Success = true, Response = rlt };
         }
 
@@ -136,6 +146,24 @@ namespace Blog.BLL.Service
                 .Select(i => new TopBlogViewDto { Id = i.Id, Name = i.Title }).Take(5).ToListAsync();
 
             return new CommonResultDto<List<TopBlogViewDto>> { Msg = "查询成功", Success = true,Response = rlt };
+        }
+
+        /// <summary>
+        /// 点赞
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<CommonResultDto<string>> Like(string id)
+        {
+            tbl_blog tbl = await _context.tbl_blog.FirstOrDefaultAsync(i => i.Id == id);
+            if (tbl != null)
+            {
+                ++tbl.LikeTimes;
+            }
+            _context.tbl_blog.Update(tbl);
+            await _context.SaveChangesAsync();
+
+            return new CommonResultDto<string> { Msg = "点赞成功", Success = true };
         }
     }
 }

@@ -10,6 +10,6 @@ namespace Blog.BLL.Interface
 
         Task<CommonResultDto<string>> Post(CommentAddDto dto);
 
-        Task<CommonResultDto<string>> Update(string id);
+        Task<CommonResultDto<string>> Like(string id);
     }
 }

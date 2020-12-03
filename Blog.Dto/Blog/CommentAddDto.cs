@@ -2,7 +2,6 @@
 {
     public class CommentAddDto
     {
-        public string Id { get; set; }
         public string BlogId { get; set; }
         public string Content { get; set; }
         public string From { get; set; }

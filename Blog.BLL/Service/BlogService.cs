@@ -108,6 +108,7 @@ namespace Blog.BLL.Service
                        Title = a.Title,
                        PicUrl = a.PicUrl,
                        Content = b.Content,
+                       Remark = a.Remark,
                        CategoryName = c.Name,
                        CreateAt = a.CreateAt,
                        ViewTimes = a.ViewTimes,

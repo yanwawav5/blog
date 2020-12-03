@@ -5,7 +5,6 @@ namespace Blog.Dto.Blog
 {
     public class BlogViewDto
     {
-        public string BlogId { get; set; }
         public string Title { get; set; }
         public string PicUrl { get; set; }
         public string Content { get; set; }

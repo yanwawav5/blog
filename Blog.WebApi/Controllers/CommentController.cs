@@ -44,7 +44,7 @@ namespace Blog.WebApi.Controllers
         /// <param name="dto"></param>
         /// <returns></returns>
         [HttpPost]
-        public async Task<CommonResultDto<string>> Post(CommentAddDto dto)
+        public async Task<CommonResultDto<string>> Post([FromBody]CommentAddDto dto)
         {
             return await _commentService.Post(dto);
         }

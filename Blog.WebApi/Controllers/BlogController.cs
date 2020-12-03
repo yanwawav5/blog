@@ -32,7 +32,8 @@ namespace Blog.WebApi.Controllers
         /// <param name="pageIndex"></param>
         /// <param name="pageSize"></param>
         /// <returns></returns>
-        public async Task<CommonPageResultDto<BlogListViewDto>> BlogList(ConditionParamDto condition, int pageIndex, int pageSize)
+        [HttpPost]
+        public async Task<CommonPageResultDto<BlogListViewDto>> BlogList([FromBody]ConditionParamDto condition, int pageIndex, int pageSize)
         {
             return await _blogService.BlogList(condition, pageIndex, pageSize);
         }

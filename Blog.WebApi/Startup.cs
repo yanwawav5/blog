@@ -2,6 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blog.BLL.Interface;
+using Blog.BLL.Service;
 using Blog.Model;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,6 +44,11 @@ namespace Blog.WebApi
 
             // connections
             services.AddDbContextPool<BlogContext>(options => options.UseMySql(Configuration["ConnectionString"]));
+
+            services.AddScoped<IBlogService, BlogService>();
+            services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<ITagService, TagService>();
+            services.AddScoped<ICommentService, CommentService>();
 
             services.AddControllers();
         }

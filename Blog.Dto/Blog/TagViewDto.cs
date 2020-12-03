@@ -2,8 +2,9 @@
 {
     public class TagViewDto
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string TagId { get; set; }
+        public string TagName { get; set; }
         public int Sequence { get; set; }
+        public string BlogId { get; set; }
     }
 }

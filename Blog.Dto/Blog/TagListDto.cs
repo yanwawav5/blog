@@ -1,9 +1,9 @@
 ﻿namespace Blog.Dto.Blog
 {
-    public class CategoryViewDto
+    public class TagListDto
     {
-        public string Id { get; set; }
-        public string Name { get; set; }
+        public string TagId { get; set; }
+        public string TagName { get; set; }
         public int Sequence { get; set; }
         public int BlogCount { get; set; }
     }

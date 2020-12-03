@@ -1,12 +1,16 @@
 ﻿using Blog.Dto;
 using Blog.Dto.Blog;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace Blog.BLL.Interface
 {
     public interface IBlogService
     {
-        CommonPageResultDto<BlogListViewDto> BlogList(string keyword, int pageIndex, int pageSize);
+        Task<CommonPageResultDto<BlogListViewDto>> BlogList(ConditionParamDto condition, int pageIndex, int pageSize);
 
-        CommonResultDto<BlogViewDto> BlogDetail(string id);
+        Task<CommonResultDto<List<TopBlogViewDto>>> TopBlogList();
+
+        Task<CommonResultDto<BlogViewDto>> BlogDetail(string id);
     }
 }

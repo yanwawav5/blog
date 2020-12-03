@@ -38,6 +38,7 @@ namespace Blog.Admin.BLL.Service
                                          {
                                              Id = a.Id,
                                              Title = a.Title,
+                                             Content = b.Content,
                                              CreateAt = a.CreateAt,
                                              PublishAt = a.PublishAt,
                                              CategoryName = c.Name,

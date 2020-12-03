@@ -1,8 +1,8 @@
 ﻿namespace Blog.Dto.Blog
 {
-    public class CommentUpdateDto
+    public class TopBlogViewDto
     {
         public string Id { get; set; }
-        public int LikeTimes { get; set; }
+        public string Name { get; set; }
     }
 }

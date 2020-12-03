@@ -18,7 +18,7 @@ namespace Blog.Model
 
         [Required, MaxLength(11)]
         [DisplayName("排序码")]
-        public string Sequence { get; set; }
+        public int Sequence { get; set; }
 
         [MaxLength(255)]
         [DisplayName("备注")]

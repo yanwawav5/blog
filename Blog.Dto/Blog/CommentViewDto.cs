@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Blog.Dto.Blog
 {
@@ -14,6 +12,6 @@ namespace Blog.Dto.Blog
         public DateTime CreateAt { get; set; }
         public string Address { get; set; }
         public int LikeTimes { get; set; }
-        public string Conetnt { get; set; }
+        public string Content { get; set; }
     }
 }

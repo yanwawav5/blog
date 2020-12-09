@@ -8,6 +8,8 @@ namespace Blog.Admin.BLL.Interface
     {
         Task<CommonPageResultDto<BlogListViewDto>> BlogList(string keyword, int pageIndex, int pageSize);
 
+        Task<CommonResultDto<BlogViewDto>> BlogDetail(string id);
+
         Task<CommonResultDto<string>> Post(BlogAddDto dto);
 
         Task<CommonResultDto<string>> Update(BlogUpdateDto dto);

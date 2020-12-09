@@ -67,6 +67,38 @@ namespace Blog.Admin.BLL.Service
         }
 
         /// <summary>
+        /// 查看博客详情
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<CommonResultDto<BlogViewDto>> BlogDetail(string id)
+        {
+            var qry = (from  a in _context.tbl_blog.Where(i => i.DeleteAt == null)
+                       join b in _context.tbl_blog_content
+                       on a.ContentId equals b.Id
+                       join c in _context.tbl_category
+                       on a.CategoryId equals c.Id
+                       where a.Id == id
+                       select new BlogViewDto
+                       {
+                           Title = a.Title,
+                           PicUrl = a.PicUrl,
+                           Content = b.Content,
+                           Remark = a.Remark,
+                           Category = c.Id
+                       }).ToList();
+
+            BlogViewDto rlt = qry.FirstOrDefault();
+            IQueryable<TagViewDto> tagRlt = (from a in _context.tbl_blog_tag_relation
+                                             join b in _context.tbl_tag
+                                             on a.TagId equals b.Id
+                                             select new TagViewDto { BlogId = a.BlogId, TagName = b.Name, TagId = b.Id, Sequence = b.Sequence });
+            rlt.TagIdList = await tagRlt.Where(i => i.BlogId == id).Select(i => i.TagId).ToListAsync();
+
+            return new CommonResultDto<BlogViewDto> { Msg = "查询成功", Success = true, Response = rlt };
+        }
+
+        /// <summary>
         /// 删除博客
         /// </summary>
         /// <param name="id"></param>

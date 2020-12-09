@@ -44,6 +44,17 @@ namespace Blog.Admin.WebApi.Controllers
         }
 
         /// <summary>
+        /// 查看博客详情
+        /// </summary>
+        /// <param name="id">博客id</param>
+        /// <returns></returns>
+        [HttpGet]
+        public async Task<CommonResultDto<BlogViewDto>> BlogDetail(string id)
+        {
+            return await _blogManageService.BlogDetail(id);
+        }
+
+        /// <summary>
         /// 删除博客
         /// </summary>
         /// <param name="id"></param>

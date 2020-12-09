@@ -16,8 +16,8 @@ namespace Blog.Admin.BLL.Mappers
 
             // tbl_tag转TagViewDto
             CreateMap<tbl_tag, TagViewDto>()
-                .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
-                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
+                .ForMember(dest => dest.TagId, opt => opt.MapFrom(src => src.Id))
+                .ForMember(dest => dest.TagName, opt => opt.MapFrom(src => src.Name))
                 .ForMember(dest => dest.Sequence, opt => opt.MapFrom(src => src.Sequence));
 
             // tbl_user转UserViewDto

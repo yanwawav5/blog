@@ -29,14 +29,14 @@ namespace Blog.BLL.Service
         {
             CommonPageResultDto<BlogListViewDto> rlt = new CommonPageResultDto<BlogListViewDto>();
             List<tbl_blog> list = new List<tbl_blog>();
-            if (!String.IsNullOrEmpty(condition.Keyword))
-            {
-                list = await (from a in _context.tbl_blog.Where(i => i.Title.Contains(condition.Keyword))
-                             join b in _context.tbl_blog_content.Where(i => i.Content.Contains(condition.Keyword))
-                             on a.ContentId equals b.Id
-                             select a).ToListAsync();
-            }
-            else if (!String.IsNullOrEmpty(condition.CategoryId))
+            //if (!String.IsNullOrEmpty(condition.Keyword))
+            //{
+            //    list = await (from a in _context.tbl_blog.Where(i => i.Title.Contains(condition.Keyword))
+            //                 join b in _context.tbl_blog_content.Where(i => i.Content.Contains(condition.Keyword))
+            //                 on a.ContentId equals b.Id
+            //                 select a).ToListAsync();
+            //}
+            if (!String.IsNullOrEmpty(condition.CategoryId))
             {
                 list = list.Where(i => i.CategoryId == condition.CategoryId).ToList();
             }
@@ -83,7 +83,8 @@ namespace Blog.BLL.Service
                                             join b in _context.tbl_tag
                                             on a.TagId equals b.Id
                                             select new TagViewDto { BlogId = a.BlogId, TagName = b.Name, TagId = b.Id, Sequence = b.Sequence });
-            
+
+            qry = String.IsNullOrEmpty(condition.Keyword) ? qry : qry.Where(i => i.Title.Contains(condition.Keyword) || i.Content.Contains(condition.Keyword)).ToList();
             foreach (var item in qry)
             {
                 item.TagList = await tagRlt.Where(i => i.BlogId == item.Id).Select(i => i).ToListAsync();

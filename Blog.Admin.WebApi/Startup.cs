@@ -74,6 +74,11 @@ namespace Blog.Admin.WebApi
             app.UseSwaggerUi3();
             #endregion
 
+            // 解决跨域问题
+            app.UseCors(builder => builder.AllowAnyOrigin()
+                                     .AllowAnyMethod()
+                                     .AllowAnyHeader());
+
             app.UseRouting();
 
             app.UseAuthorization();

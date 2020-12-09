@@ -3,6 +3,7 @@ using Blog.Dto;
 using Blog.Dto.BlogAdmin;
 using Blog.Model;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,8 +29,8 @@ namespace Blog.Admin.BLL.Service
         public async Task<CommonPageResultDto<BlogListViewDto>> BlogList(string keyword, int pageIndex, int pageSize)
         {
             CommonPageResultDto<BlogListViewDto> rlt = new CommonPageResultDto<BlogListViewDto>();
-            List<BlogListViewDto> qry = await (from a in _context.tbl_blog.Where(i=>i.Title.Contains(keyword)) 
-                                         join b in _context.tbl_blog_content.Where(i=>i.Content.Contains(keyword)) 
+            List<BlogListViewDto> qry = await (from a in _context.tbl_blog 
+                                         join b in _context.tbl_blog_content
                                          on a.ContentId equals b.Id
                                          join c in _context.tbl_category 
                                          on a.CategoryId equals c.Id
@@ -51,6 +52,7 @@ namespace Blog.Admin.BLL.Service
                                                 join b in _context.tbl_tag
                          on a.TagId equals b.Id
                          select new BlogTagQryDto { BlogId = a.BlogId, TagName = b.Name });
+            qry = String.IsNullOrEmpty(keyword) ? qry : qry.Where(i => i.Title.Contains(keyword) || i.Content.Contains(keyword)).ToList();
             foreach (var item in qry)
             {
                 item.TagNameList = await tagRlt.Where(i => i.BlogId == item.Id).Select(i => i.TagName).ToListAsync();

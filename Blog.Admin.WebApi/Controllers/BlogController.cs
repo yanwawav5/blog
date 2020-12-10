@@ -86,5 +86,16 @@ namespace Blog.Admin.WebApi.Controllers
         {
             return await _blogManageService.Update(dto);
         }
+
+        /// <summary>
+        /// 发布博客
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        [HttpPut]
+        public async Task<CommonResultDto<string>> ReleaseBlog(string id)
+        {
+            return await _blogManageService.ReleaseBlog(id);
+        }
     }
 }

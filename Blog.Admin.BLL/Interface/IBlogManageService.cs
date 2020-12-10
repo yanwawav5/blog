@@ -15,5 +15,7 @@ namespace Blog.Admin.BLL.Interface
         Task<CommonResultDto<string>> Update(BlogUpdateDto dto);
 
         Task<CommonResultDto<string>> Delete(string id);
+
+        Task<CommonResultDto<string>> ReleaseBlog(string id);
     }
 }

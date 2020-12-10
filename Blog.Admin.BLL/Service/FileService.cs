@@ -27,12 +27,13 @@ namespace Blog.Admin.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<string>> Upload(IFormFile file)
         {
-            var path = Directory.GetCurrentDirectory() + _configuration["FilePath"];
+            var path = Directory.GetCurrentDirectory() + "\\wwwroot" + _configuration["FilePath"];
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
             }
-            var filePath = path + DateTime.UtcNow.ToString("yyyyMMddHHmmss") + new Random().Next(1000, 10000).ToString() + Path.GetExtension(file.FileName);
+            var fileName = DateTime.UtcNow.ToString("yyyyMMddHHmmss") + new Random().Next(1000, 10000).ToString() + Path.GetExtension(file.FileName);
+            var filePath = path + fileName;
             using (var stream = File.Create(filePath))
             {
                 file.CopyTo(stream);
@@ -42,7 +43,8 @@ namespace Blog.Admin.BLL.Service
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = file.FileName,
-                Path = filePath,
+                //Path = filePath,
+                Path = _configuration["FilePath"] + fileName,
                 ExtName = Path.GetExtension(file.FileName),
                 Size = file.Length,
                 UploadAt = DateTime.Now,
@@ -55,7 +57,7 @@ namespace Blog.Admin.BLL.Service
             {
                 Msg = "上传成功",
                 Success = true,
-                Response = filePath
+                Response = _configuration["FilePath"] + fileName
             };
         }
 

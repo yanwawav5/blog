@@ -364,3 +364,4 @@ Blog.Admin.WebApi/Properties/launchSettings.json
 Blog.Admin.WebApi/Blog.Admin.WebApi.xml
 Blog.WebApi/Properties/launchSettings.json
 Blog.WebApi/Blog.WebApi.xml
+/Blog.Admin.WebApi/wwwroot/File

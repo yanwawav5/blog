@@ -30,6 +30,11 @@
     <ProjectReference Include="..\Blog.Model\Blog.Model.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\File\202012100258281034.jpg" />
+    <None Include="wwwroot\File\202012100302173362.jpg" />
+  </ItemGroup>
+
   <ProjectExtensions><VisualStudio><UserProperties properties_4launchsettings_1json__JsonSchema="" /></VisualStudio></ProjectExtensions>
 
 

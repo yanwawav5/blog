@@ -3,7 +3,6 @@ using Blog.Dto;
 using Blog.Dto.BlogAdmin;
 using Blog.Model;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,7 +45,7 @@ namespace Blog.Admin.BLL.Service
                                              StateName = a.State == '1' ? "未发布" : "已发布",
                                              ViewTimes = a.ViewTimes,
                                              LikeTimes = a.LikeTimes
-                                         }).ToListAsync();
+                                         }).OrderByDescending(i=>i.CreateAt).ToListAsync();
 
             IQueryable<BlogTagQryDto> tagRlt = (from a in _context.tbl_blog_tag_relation
                                                 join b in _context.tbl_tag
@@ -93,7 +92,7 @@ namespace Blog.Admin.BLL.Service
                                              join b in _context.tbl_tag
                                              on a.TagId equals b.Id
                                              select new TagViewDto { BlogId = a.BlogId, TagName = b.Name, TagId = b.Id, Sequence = b.Sequence });
-            rlt.TagIdList = await tagRlt.Where(i => i.BlogId == id).Select(i => i.TagId).ToListAsync();
+           rlt.TagIdList = await tagRlt.Where(i => i.BlogId == id).Select(i => i.TagId).ToListAsync();
 
             return new CommonResultDto<BlogViewDto> { Msg = "查询成功", Success = true, Response = rlt };
         }
@@ -105,12 +104,22 @@ namespace Blog.Admin.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<string>> Delete(string id)
         {
-            tbl_blog tbl = await _context.tbl_blog.FirstOrDefaultAsync(i=>i.Id == id);
-            tbl.DeleteAt = DateTime.Now;
-            _context.tbl_blog.Update(tbl);
-            await _context.SaveChangesAsync();
+            using (await _context.Database.BeginTransactionAsync())
+            {
+                tbl_blog tbl = await _context.tbl_blog.FirstOrDefaultAsync(i => i.Id == id);
+                tbl.DeleteAt = DateTime.Now;
+                _context.tbl_blog.Update(tbl);
+                ////删除博客内容
+                //tbl_blog_content tbl_content = await _context.tbl_blog_content.FirstOrDefaultAsync(i => i.Id == tbl.ContentId);
+                //_context.tbl_blog_content.Remove(tbl_content);
 
-            return new CommonResultDto<string> { Msg = "更新成功", Success = true };
+                ////删除博客标签管理表数据
+                //IEnumerable<tbl_blog_tag_relation> tbl_tag_relations = _context.tbl_blog_tag_relation.Where(i => i.BlogId == id);
+                //_context.tbl_blog_tag_relation.RemoveRange(tbl_tag_relations);
+                await _context.SaveChangesAsync();
+                _context.Database.CommitTransaction();
+                return new CommonResultDto<string> { Msg = "更新成功", Success = true };
+            }
         }
 
         /// <summary>
@@ -208,6 +217,20 @@ namespace Blog.Admin.BLL.Service
 
                 return new CommonResultDto<string> { Msg = "更新成功", Success = true };
             }
+        }
+
+        /// <summary>
+        /// 发布博客
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<CommonResultDto<string>> ReleaseBlog(string id)
+        {
+            tbl_blog blog = await _context.tbl_blog.FirstOrDefaultAsync(i => i.Id == id);
+            blog.State = '2';
+            _context.tbl_blog.Update(blog);
+            await _context.SaveChangesAsync();
+            return new CommonResultDto<string> { Msg = "发布成功", Success = true };
         }
     }
 }

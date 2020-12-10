@@ -69,6 +69,8 @@ namespace Blog.Admin.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             #region  π”√swagger
             app.UseOpenApi();
             app.UseSwaggerUi3();

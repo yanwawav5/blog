@@ -29,7 +29,7 @@ namespace Blog.Model
         [DisplayName("类别ID")]
         public string CategoryId { get; set; }
 
-        [Required, MaxLength(36)]
+        [Required, MaxLength(200)]
         [DisplayName("博客图片路径")]
         public string PicUrl { get; set; }
 

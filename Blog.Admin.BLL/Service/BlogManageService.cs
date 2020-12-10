@@ -40,12 +40,13 @@ namespace Blog.Admin.BLL.Service
                                              Title = a.Title,
                                              Content = b.Content,
                                              CreateAt = a.CreateAt,
+                                             UpdateAt = a.UpdateAt,
                                              PublishAt = a.PublishAt,
                                              CategoryName = c.Name,
                                              StateName = a.State == '1' ? "未发布" : "已发布",
                                              ViewTimes = a.ViewTimes,
                                              LikeTimes = a.LikeTimes
-                                         }).OrderByDescending(i=>i.CreateAt).ToListAsync();
+                                         }).OrderByDescending(i=>i.CreateAt).ThenByDescending(i=>i.UpdateAt).ToListAsync();
 
             IQueryable<BlogTagQryDto> tagRlt = (from a in _context.tbl_blog_tag_relation
                                                 join b in _context.tbl_tag
@@ -80,6 +81,7 @@ namespace Blog.Admin.BLL.Service
                        where a.Id == id
                        select new BlogViewDto
                        {
+                           Id = a.Id,
                            Title = a.Title,
                            PicUrl = a.PicUrl,
                            Content = b.Content,

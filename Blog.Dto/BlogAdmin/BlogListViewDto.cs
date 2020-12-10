@@ -9,6 +9,7 @@ namespace Blog.Dto.BlogAdmin
         public string Title { get; set; }
         public string Content { get; set; }
         public DateTime CreateAt { get; set; }
+        public DateTime? UpdateAt { get; set; }
         public DateTime? PublishAt { get; set; }
         public string CategoryName { get; set; }
         public List<string> TagNameList { get; set; }

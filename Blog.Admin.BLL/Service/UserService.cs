@@ -4,6 +4,7 @@ using Blog.Dto;
 using Blog.Dto.BlogAdmin;
 using Blog.Model;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -29,9 +30,9 @@ namespace Blog.Admin.BLL.Service
         public async Task<CommonPageResultDto<UserViewDto>> UserList(string keyword, int pageIndex, int pageSize)
         {
             CommonPageResultDto<UserViewDto> rlt = new CommonPageResultDto<UserViewDto>();
-            var qry = await _context.tbl_user.Where(i => i.Name.Contains(keyword) || i.Email.Contains(keyword))
-                .OrderBy(s => s.RegisterAt).Select(i => _mapper.Map<UserViewDto>(i)).ToListAsync();
+            var qry = await _context.tbl_user.OrderBy(s => s.RegisterAt).Select(i => _mapper.Map<UserViewDto>(i)).ToListAsync();
 
+            qry = String.IsNullOrEmpty(keyword) ? qry : qry.Where(i => i.Name.Contains(keyword) || i.Email.Contains(keyword)).ToList();
             rlt.DataCount = qry.Count;
             rlt.Page = pageIndex;
             rlt.PageSize = pageSize;

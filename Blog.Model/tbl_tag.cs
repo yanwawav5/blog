@@ -16,6 +16,10 @@ namespace Blog.Model
         [DisplayName("标签名称")]
         public string Name { get; set; }
 
+        [Required, MaxLength(255)]
+        [DisplayName("标签字体样式")]
+        public string IconFontClass { get; set; }
+
         [Required, MaxLength(11)]
         [DisplayName("排序码")]
         public int Sequence { get; set; }

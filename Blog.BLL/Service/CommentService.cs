@@ -37,7 +37,7 @@ namespace Blog.BLL.Service
                              {
                                  Id = a.Id,
                                  FromUserName = b.Name,
-                                 ToUserName = g.Name,
+                                 ToUserName = g == null ? null : g.Name,
                                  CurrentFloorNum = a.CurrentFloorNum,
                                  ToFloorNum = a.ToFloorNum,
                                  CreateAt = a.CreateAt,

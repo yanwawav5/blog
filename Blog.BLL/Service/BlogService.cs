@@ -38,11 +38,11 @@ namespace Blog.BLL.Service
             //}
             if (!String.IsNullOrEmpty(condition.CategoryId))
             {
-                list = list.Where(i => i.CategoryId == condition.CategoryId).ToList();
+                list = _context.tbl_blog.Where(i => i.CategoryId == condition.CategoryId).ToList();
             }
             else if (!String.IsNullOrEmpty(condition.TagId))
             {
-                list = (from a in list
+                list = (from a in _context.tbl_blog
                         join b in _context.tbl_blog_tag_relation.Where(i => i.TagId == condition.TagId)
                         on a.Id equals b.BlogId
                         select a).ToList();
@@ -66,7 +66,8 @@ namespace Blog.BLL.Service
                                         join c in _context.tbl_category
                                         on a.CategoryId equals c.Id
                                          join d in commentGroup
-                                         on a.Id equals d.Id
+                                         on a.Id equals d.Id into temp
+                                         from g in temp.DefaultIfEmpty()
                                          select new BlogListViewDto
                                         {
                                             Id = a.Id,
@@ -76,7 +77,7 @@ namespace Blog.BLL.Service
                                             ViewTimes = a.ViewTimes,
                                             LikeTimes = a.LikeTimes,
                                             PicUrl = a.PicUrl,
-                                            CommentTimes = d.CommentTimes // _context.tbl_comment.Count(i=>i.BlogId == a.Id)
+                                            CommentTimes = g == null ? 0 : g.CommentTimes // _context.tbl_comment.Count(i=>i.BlogId == a.Id)
                                         }).ToList();
 
             IQueryable<TagViewDto> tagRlt = (from a in _context.tbl_blog_tag_relation
@@ -161,8 +162,8 @@ namespace Blog.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<List<TopBlogViewDto>>> TopBlogList()
         {
-            List<TopBlogViewDto> rlt = await _context.tbl_blog.OrderBy(i => (i.ViewTimes + i.LikeTimes))
-                .Select(i => new TopBlogViewDto { Id = i.Id, Name = i.Title }).Take(5).ToListAsync();
+            List<TopBlogViewDto> rlt = await _context.tbl_blog.OrderByDescending(i => (i.ViewTimes + i.LikeTimes))
+                .Select(i => new TopBlogViewDto { Id = i.Id, Name = i.Title, ViewLikeTimes = i.ViewTimes + i.LikeTimes }).Take(5).ToListAsync();
 
             return new CommonResultDto<List<TopBlogViewDto>> { Msg = "查询成功", Success = true,Response = rlt };
         }

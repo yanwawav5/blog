@@ -40,7 +40,7 @@ namespace Blog.BLL.Service
                           BlogCount = b.BlogCount,
                           Name = a.Name,
                           Sequence = a.Sequence
-                      }).ToList();
+                      }).OrderBy(i => i.Sequence).ToList();
 
             return new CommonResultDto<List<CategoryViewDto>> { Msg = "查询成功", Success = true, Response = rlt };
         }

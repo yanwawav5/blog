@@ -40,6 +40,7 @@ namespace Blog.BLL.Service
                        {
                            TagId = a.Id,
                            TagName = a.Name,
+                           IconFontClass = a.IconFontClass,
                            Sequence = a.Sequence,
                            BlogCount = p == null ? 0 : p.BlogCount
                        }).ToList();

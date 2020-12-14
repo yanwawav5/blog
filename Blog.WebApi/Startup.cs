@@ -61,10 +61,16 @@ namespace Blog.WebApi
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
+
             #region 使用swagger
             app.UseOpenApi();
             app.UseSwaggerUi3();
             #endregion
+            // 解决跨域问题
+            app.UseCors(builder => builder.AllowAnyOrigin()
+                                     .AllowAnyMethod()
+                                     .AllowAnyHeader());
 
             app.UseRouting();
 

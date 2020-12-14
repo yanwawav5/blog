@@ -38,11 +38,11 @@ namespace Blog.BLL.Service
             //}
             if (!String.IsNullOrEmpty(condition.CategoryId))
             {
-                list = _context.tbl_blog.Where(i => i.CategoryId == condition.CategoryId).ToList();
+                list = _context.tbl_blog.Where(i => i.CategoryId == condition.CategoryId && i.DeleteAt == null).ToList();
             }
             else if (!String.IsNullOrEmpty(condition.TagId))
             {
-                list = (from a in _context.tbl_blog
+                list = (from a in _context.tbl_blog.Where(i=> i.DeleteAt == null)
                         join b in _context.tbl_blog_tag_relation.Where(i => i.TagId == condition.TagId)
                         on a.Id equals b.BlogId
                         select a).ToList();
@@ -107,6 +107,7 @@ namespace Blog.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<BlogViewDto>> BlogDetail(string id)
         {
+            List<tbl_blog> list = _context.tbl_blog.Where(i => i.DeleteAt == null).ToList();
             List<BlogListViewDto> commentGroup = await (from a in _context.tbl_comment
                                                         group a by a.BlogId into g
                                                         select new BlogListViewDto
@@ -115,13 +116,14 @@ namespace Blog.BLL.Service
                                                             CommentTimes = g.Count()
                                                         }).ToListAsync();
 
-            var qry =  (from g in commentGroup
-                         join a in _context.tbl_blog.Where(i => i.DeleteAt == null)
-                         on g.Id equals a.Id
+            var qry =  (from a in list
                          join b in _context.tbl_blog_content
                          on a.ContentId equals b.Id
                          join c in _context.tbl_category
                          on a.CategoryId equals c.Id
+                         join d in commentGroup
+                         on a.Id equals d.Id into temp
+                         from g in temp.DefaultIfEmpty()
                          where a.Id == id
                          select new BlogViewDto
                         {
@@ -133,7 +135,7 @@ namespace Blog.BLL.Service
                             CreateAt = a.CreateAt,
                             ViewTimes = a.ViewTimes,
                             LikeTimes = a.LikeTimes,
-                            CommentTimes = g.CommentTimes//_context.tbl_comment.Count(i => i.BlogId == a.Id)
+                            CommentTimes = g == null ? 0 : g.CommentTimes//_context.tbl_comment.Count(i => i.BlogId == a.Id)
                         }).ToList();
 
             BlogViewDto rlt = qry.FirstOrDefault();
@@ -141,8 +143,12 @@ namespace Blog.BLL.Service
                                              join b in _context.tbl_tag
                                              on a.TagId equals b.Id
                                              select new TagViewDto { BlogId = a.BlogId, TagName = b.Name, TagId = b.Id, Sequence = b.Sequence });
-            rlt.TagNameList = await tagRlt.Where(i => i.BlogId == id).Select(i => i.TagName).ToListAsync();
-
+            if(rlt != null)
+            {
+                List<string> tagNameList = tagRlt.Where(i => i.BlogId == id).Select(i => i.TagName).ToList();
+                rlt.TagNameList = tagNameList;
+                //if (tagNameList != null) { rlt.TagNameList.AddRange(tagNameList); };
+            }
 
             //查看一次详情，浏览次数累加一次
             tbl_blog tbl = await _context.tbl_blog.FirstOrDefaultAsync(i => i.Id == id);

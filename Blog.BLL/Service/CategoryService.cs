@@ -23,7 +23,7 @@ namespace Blog.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<List<CategoryViewDto>>> CategoryList()
         {
-            var list = await (from a in _context.tbl_blog
+            var list = await (from a in _context.tbl_blog.Where(i=>i.DeleteAt == null)
                              group a by a.CategoryId
                              into g
                              select new CategoryViewDto

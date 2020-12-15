@@ -23,14 +23,16 @@ namespace Blog.BLL.Service
         /// <returns></returns>
         public async Task<CommonResultDto<List<TagListDto>>> TagList()
         {
-            var list = await (from a in _context.tbl_blog_tag_relation
-                        group a by a.TagId
-                        into g
-                        select new TagListDto
-                        {
-                            TagId = g.Key,
-                            BlogCount = g.Count()
-                        }).ToListAsync();
+            var list = await (from a in _context.tbl_blog.Where(i=>i.DeleteAt == null)
+                              join b in _context.tbl_blog_tag_relation
+                              on a.Id equals b.BlogId 
+                            group b by b.TagId
+                            into g
+                            select new TagListDto
+                            {
+                                TagId = g.Key,
+                                BlogCount = g.Count()
+                            }).ToListAsync();
             var rlt = (from a in _context.tbl_tag.ToList()
                        join b in list
                        on a.Id equals b.TagId

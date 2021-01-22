@@ -3,14 +3,16 @@ using System;
 using Blog.Model;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Blog.Model.Migrations
 {
     [DbContext(typeof(BlogContext))]
-    partial class BlogContextModelSnapshot : ModelSnapshot
+    [Migration("20210122025920_updatePassword")]
+    partial class updatePassword
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -285,11 +287,6 @@ namespace Blog.Model.Migrations
 
                     b.Property<DateTime>("RegisterAt")
                         .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Type")
-                        .IsRequired()
-                        .HasColumnType("varchar(1) CHARACTER SET utf8mb4")
-                        .HasMaxLength(1);
 
                     b.HasKey("Id");
 

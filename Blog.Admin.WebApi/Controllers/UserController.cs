@@ -35,5 +35,23 @@ namespace Blog.Admin.WebApi.Controllers
         {
             return await _userService.UserList(keyword, pageIndex, pageSize);
         }
+
+       /// <summary>
+       /// 用户注册
+       /// </summary>
+       /// <param name="model"></param>
+       /// <returns></returns>
+        [HttpPost]
+        public async Task<CommonResultDto<UserViewDto>> Register([FromBody]UserAddDto model)
+        {
+            return await _userService.Create(model);
+        }
+
+        
+        [HttpPost]
+        public async Task<CommonPageResultDto<UserViewDto>> Update(string keyword, int pageIndex, int pageSize)
+        {
+            return await _userService.UserList(keyword, pageIndex, pageSize);
+        }
     }
 }

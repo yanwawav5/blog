@@ -2,14 +2,19 @@ using AutoMapper;
 using Blog.Admin.BLL.Interface;
 using Blog.Admin.BLL.Service;
 using Blog.Model;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using System;
 using System.Linq;
 using System.Reflection;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Blog.Admin.WebApi
 {
@@ -41,6 +46,42 @@ namespace Blog.Admin.WebApi
             // connections
             services.AddDbContextPool<BlogContext>(options => options.UseMySql(Configuration["ConnectionString"]));
 
+
+            // configure jwt authentication
+            var key = Encoding.ASCII.GetBytes(Configuration["AppSetting:Secret"]);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(x =>
+            {
+                x.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context =>
+                    {
+                        var userService = context.HttpContext.RequestServices.GetRequiredService<IUserService>();
+                        var userId = context.Principal.Identity.Name;
+                        var user = userService.GetById(userId);
+                        if (user == null)
+                        {
+                            // return unauthorized if user no longer exists
+                            context.Fail("Unauthorized");
+                        }
+                        return Task.CompletedTask;
+                    }
+                };
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
+
             services.AddScoped<IBlogManageService, BlogManageService>();
             services.AddScoped<ICategoryManageService, CategoryManageService>();
             services.AddScoped<ITagManageService, TagManageService>();
@@ -48,15 +89,16 @@ namespace Blog.Admin.WebApi
             services.AddScoped<IUserService, UserService>();
 
             //AutoMapper
-            var allType =
-                Assembly
-                    .GetEntryAssembly()//获取默认程序集
-                    .GetReferencedAssemblies()//获取所有引用程序集
-                    .Select(Assembly.Load)
-                    .SelectMany(y => y.DefinedTypes)
-                    .Where(type => typeof(BLL.Mappers.MapperConfig).GetTypeInfo().IsAssignableFrom(type.AsType()));
+            //var allType =
+            //    Assembly
+            //        .GetEntryAssembly()//获取默认程序集
+            //        .GetReferencedAssemblies()//获取所有引用程序集
+            //        .Select(Assembly.Load)
+            //        .SelectMany(y => y.DefinedTypes)
+            //        .Where(type => typeof(BLL.Mappers.MapperConfig).GetTypeInfo().IsAssignableFrom(type.AsType()));
 
-            services.AddAutoMapper(allType.ToArray());
+            //services.AddAutoMapper(allType.ToArray());
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddControllers();
         }
@@ -83,6 +125,7 @@ namespace Blog.Admin.WebApi
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

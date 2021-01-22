@@ -21,9 +21,17 @@ namespace Blog.Model
         [DisplayName("邮箱地址")]
         public string Email { get; set; }
 
-        [Required, MaxLength(255)]
+        //[Required, MaxLength(255)]
+        //[DisplayName("密码加密密文")]
+        //public string Password { get; set; }
+
+        [Required, MaxLength(64)]
         [DisplayName("密码加密密文")]
-        public string Password { get; set; }
+        public byte[] PasswordHash { get; set; }
+
+        [Required, MaxLength(128)]
+        [DisplayName("密码盐")]
+        public byte[] PasswordSalt { get; set; }
 
         [Required]
         [DisplayName("注册时间")]
@@ -36,5 +44,9 @@ namespace Blog.Model
         [Required, MaxLength(255)]
         [DisplayName("最后一次登陆地点")]
         public string LastLoginAddr { get; set; }
+
+        [Required, MaxLength(1)]
+        [DisplayName("人员类型(1：普通用户:2：管理用户)")]
+        public char Type { get; set; }
     }
 }
